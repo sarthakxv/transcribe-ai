@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# YT Transcriber & Assistant
+
+Transcribe the YouTube videos and ask questions about their content.
+
+Paste the link of a YouTube video, automatically fetch its full transcript, and then engage in a conversation with an AI assistant to get insights, summaries, or answers to specific questions about the video.
+
+## Features
+
+- **YouTube Video Transcription**: Extracts captions/subtitles from any public YouTube video.
+- **Q&A**: Currently uses OpenAI's `gpt-4o-mini` to answer questions based on the video's transcript.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/en/) (version 18.x or later)
+- [pnpm](https://pnpm.io/installation)
+
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sarthak-g-git/yt-transcriber.git
+cd yt-transcriber
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Set up environment variables
 
-## Learn More
+Create a file named `.env.local` in the root of the project and add the following variables:
 
-To learn more about Next.js, take a look at the following resources:
+```
+OPENAI_API_KEY="your-openai-api-key"
+TAVILY_API_KEY="your-tavily-api-key"
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You need to get your API keys from [OpenAI](https://platform.openai.com/api-keys) and [Tavily AI](https://app.tavily.com/sign-in).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run the development server
 
-## Deploy on Vercel
+```bash
+pnpm dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can now paste a YouTube video URL to get started.
